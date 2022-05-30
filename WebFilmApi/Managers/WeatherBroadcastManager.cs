@@ -7,6 +7,6 @@ namespace WebFilmApi.Managers
 {
     public class WeatherBroadcastManager
     { 
-        
+        //test git
     }
 }
