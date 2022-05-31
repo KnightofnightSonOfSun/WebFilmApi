@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +22,15 @@ namespace WebFilmApi
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureAppConfiguration((context, options) =>
+                    {
+                        options.SetBasePath(Directory.GetCurrentDirectory());
+                        options.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                        options.AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+                        options.AddEnvironmentVariables($"{AppDomain.CurrentDomain.FriendlyName}");
+                    });
                     webBuilder.UseStartup<Startup>();
-                }).UseServiceProviderFactory(new AutofacServiceProviderFactory());
+                })
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory());
     }
 }

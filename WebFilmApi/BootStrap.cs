@@ -15,5 +15,10 @@ namespace WebFilmApi
             builder.RegisterTypes(controllersTypesInAssembly).PropertiesAutowired();
         }
 
+        public static void InitAutofacInstance(ContainerBuilder builder)
+        {
+
+        }
+
     }
 }

@@ -9,14 +9,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using Swashbuckle.AspNetCore;
+using Common.Utility.Models;
 
 namespace WebFilmApi
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public IConfiguration Configuration { get; set; }
+        public ILifetimeScope AutofacContainer { get; set; }
+
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddControllersAsServices(); //控制器当做实例创建
@@ -29,6 +39,10 @@ namespace WebFilmApi
                     Description = "框架说明文档"
                 });
             });
+            services.AddSingleton(Configuration);
+            services.AddOptions();
+            services.Configure<DatabaseConnection>(Configuration.GetSection("ConnectionStrings"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +72,7 @@ namespace WebFilmApi
 
         public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterModule<BootStrap>();
+            BootStrap.InitAutofacInstance(containerBuilder);
         }
     }
 }
