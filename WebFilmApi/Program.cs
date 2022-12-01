@@ -26,7 +26,7 @@ namespace WebFilmApi
                     {
                         options.SetBasePath(Directory.GetCurrentDirectory());
                         options.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-                        options.AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+                        //options.AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true);
                         options.AddEnvironmentVariables($"{AppDomain.CurrentDomain.FriendlyName}");
                     });
                     webBuilder.UseStartup<Startup>();

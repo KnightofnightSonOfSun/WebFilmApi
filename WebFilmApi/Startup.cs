@@ -13,6 +13,9 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Swashbuckle.AspNetCore;
 using Common.Utility.Models;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using WebFilmApi.Account.Controller;
 
 namespace WebFilmApi
 {
@@ -29,6 +32,11 @@ namespace WebFilmApi
         
         public void ConfigureServices(IServiceCollection services)
         {
+            #region 指定控制器实例由容器创建
+
+            services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
+
+            #endregion
             services.AddControllers().AddControllersAsServices(); //控制器当做实例创建
             services.AddSwaggerGen(c =>
             {
@@ -59,6 +67,7 @@ namespace WebFilmApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiHelp V1");
             });
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();

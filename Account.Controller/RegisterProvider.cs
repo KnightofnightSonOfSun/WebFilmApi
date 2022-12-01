@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Attribute;
 using WebFilmApi.Account.Model.Response;
 using DB.Mysql.Account.Logic;
 using DB.Mysql.Account.Logic.Interface;
@@ -18,9 +19,9 @@ namespace WebFilmApi.Account.Controller
         public void Register(ContainerBuilder builder)
         {
             builder.RegisterType<SearchTeacherManager>().As<ILogicManager<SearchTeacherResponse, string>>()
-                .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
+                .PropertiesAutowired(new AutoWiredPropertySelector());
 
-            builder.RegisterType<SearchTeacherByNameCommand>().As<IMysqlCommand<List<TeacherInfoOutput>, string>>();
+            builder.RegisterType<SearchTeacherByNameCommand>().As<IMysqlCommand<List<TeacherInfoOutput>, string>>().PropertiesAutowired(new AutoWiredPropertySelector());
         }
     }
 }

@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Account.Model\WebFilmApi.Account.Model.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\DB.Mysql.Account.Logic\DB.Mysql.Account.Logic.csproj" />
   </ItemGroup>
 
 </Project>

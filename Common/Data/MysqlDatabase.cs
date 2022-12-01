@@ -2,6 +2,8 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace Common.Data
@@ -11,50 +13,81 @@ namespace Common.Data
         private int? _commandTimeout { get; set; }
         private readonly string _commandText;
         private readonly string _connectionStr;
-        private List<MySqlParameter> _parameters;
 
         private static MySqlConnection _connection;
+
+        private MySqlCommand _cmd;
+
+        public MySqlCommand DbCommand
+        {
+            get
+            {
+                if (_cmd == null)
+                {
+                    _cmd = new MySqlCommand(_commandText, _connection);
+                    _cmd.CommandType = CommandType.StoredProcedure;
+                    if (_commandTimeout.HasValue)
+                    {
+                        _cmd.CommandTimeout = _commandTimeout.Value;
+                    }
+                    _cmd.Connection = new MySqlConnection(_connectionStr);
+                    _cmd.Connection.Open();
+                }
+
+                return _cmd;
+            }
+        }
 
         public MysqlDatabase(string connectionStr, string commandText)
         {
             _connectionStr = connectionStr;
             _commandText = commandText;
-            GetMySqlConnection();
         }
 
-        private void GetMySqlConnection()
-        {
-            if (_connection == null)
-            {
-                _connection = new MySqlConnection(_connectionStr);
-            }
-        }
 
         public async void ExecuteNonQueryAsync()
         {
-            var responseCode = await MySqlHelper.ExecuteNonQueryAsync(_connection, _commandText, _parameters.ToArray());
+            try
+            {
+                await DbCommand.ExecuteNonQueryAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
-        public async Task<MySqlDataReader> ExecuteReaderAsync()
+        public async Task<DbDataReader> ExecuteReaderAsync()
         {
-            var response = await MySqlHelper.ExecuteReaderAsync(_connection, _commandText, _parameters.ToArray());
-            return response;
+            try
+            {
+                return await DbCommand.ExecuteReaderAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public void AddMysqlParameters(string fieldName, MySqlDbType fieldType, int fieldDigit = 0)
+        public void AddMysqlParameters(string fieldName, MySqlDbType fieldType, object fieldValue, int fieldDigit = 0, ParameterDirection direction = ParameterDirection.Input)
         {
+            var param = new MySqlParameter(fieldName, fieldType);
+            param.Direction = direction;
+            param.Value = fieldValue;
             if (fieldDigit == 0)
             {
-                _parameters.Add(new MySqlParameter(fieldName, fieldType));
+                DbCommand.Parameters.Add(param);
                 return;
             }
-            _parameters.Add(new MySqlParameter(fieldName, fieldType, fieldDigit));
+
+            param.Size = fieldDigit;
+            DbCommand.Parameters.Add(param);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _cmd.Connection?.Close();
         }
     }
 }
