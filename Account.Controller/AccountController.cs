@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Common.Attribute;
 using Common.Interface;
 using Microsoft.AspNetCore.Mvc;
+using WebFilmApi.Account.Model.Request;
 using WebFilmApi.Account.Model.Response;
 
 namespace WebFilmApi.Account.Controller
@@ -16,6 +17,8 @@ namespace WebFilmApi.Account.Controller
     {
         [AutoWiredProperty]
         public ILogicManager<SearchTeacherResponse, string> SearchTeacherManager { get; set; }
+        [AutoWiredProperty]
+        public ILogicManager<AddTeacherRequest> AddTeacherManager { get; set; }
 
         [Route("/teacherInfo")]
         [HttpGet]
@@ -23,6 +26,14 @@ namespace WebFilmApi.Account.Controller
         {
             var response = await SearchTeacherManager.Execute(teacherName);
             return Ok(response);
+        }
+
+        [Route("/addTeacher")]
+        [HttpPost]
+        public async Task<IActionResult> AddTeacher([FromBody] AddTeacherRequest request)
+        {
+            await AddTeacherManager.Execute(request);
+            return Ok();
         }
 
     }
