@@ -2,6 +2,6 @@
 {
     public class FilmController
     {
-
+        public string test;
     }
 }
