@@ -1,6 +1,6 @@
 ﻿namespace WebFilmApi.File.Controller
 {
-    public class Class1
+    public class FilmController
     {
 
     }
