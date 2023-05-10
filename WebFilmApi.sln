@@ -21,11 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB.Mysql.Account.Model", "D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Account", "Account", "{D1ECD7F8-DFC8-4B2E-A737-8E0666417E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi.Account.Controller", "Account.Controller\WebFilmApi.Account.Controller.csproj", "{91AE981B-8554-456E-A3B6-E3F54EA15276}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebFilmApi.Account.Controller", "Account.Controller\WebFilmApi.Account.Controller.csproj", "{91AE981B-8554-456E-A3B6-E3F54EA15276}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi.Account.Logic", "Account.Logic\WebFilmApi.Account.Logic.csproj", "{69CF529A-7ACE-4576-BEFF-4BF8BD39BCC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebFilmApi.Account.Logic", "Account.Logic\WebFilmApi.Account.Logic.csproj", "{69CF529A-7ACE-4576-BEFF-4BF8BD39BCC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi.Account.Model", "Account.Model\WebFilmApi.Account.Model.csproj", "{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebFilmApi.Account.Model", "Account.Model\WebFilmApi.Account.Model.csproj", "{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "File", "File", "{A0136684-7DEA-411C-A31B-6E3FE6A05B33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
