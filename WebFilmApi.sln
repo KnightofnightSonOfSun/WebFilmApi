@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebFilmApi", "WebFilmApi\WebFilmApi.csproj", "{6065E5F7-6F18-47DA-B31A-0235FE9B1A91}"
 EndProject
@@ -28,6 +28,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebFilmApi.Account.Model", "Account.Model\WebFilmApi.Account.Model.csproj", "{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "File", "File", "{A0136684-7DEA-411C-A31B-6E3FE6A05B33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi.File.Controller", "WebFilmApi.File.Controller\WebFilmApi.File.Controller.csproj", "{67E6FEE1-C37E-44DF-9302-7EB47579D827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi.File.Logic", "WebFilmApi.File.Logic\WebFilmApi.File.Logic.csproj", "{CA6C1BD4-06F5-4776-9CB4-13F292B568F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi.File.Model", "WebFilmApi.File.Model\WebFilmApi.File.Model.csproj", "{06147D16-5841-47CD-B3F6-F3EB0407F6E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E6FEE1-C37E-44DF-9302-7EB47579D827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E6FEE1-C37E-44DF-9302-7EB47579D827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E6FEE1-C37E-44DF-9302-7EB47579D827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E6FEE1-C37E-44DF-9302-7EB47579D827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA6C1BD4-06F5-4776-9CB4-13F292B568F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6C1BD4-06F5-4776-9CB4-13F292B568F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6C1BD4-06F5-4776-9CB4-13F292B568F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6C1BD4-06F5-4776-9CB4-13F292B568F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06147D16-5841-47CD-B3F6-F3EB0407F6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06147D16-5841-47CD-B3F6-F3EB0407F6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06147D16-5841-47CD-B3F6-F3EB0407F6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06147D16-5841-47CD-B3F6-F3EB0407F6E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +94,9 @@ Global
 		{91AE981B-8554-456E-A3B6-E3F54EA15276} = {D1ECD7F8-DFC8-4B2E-A737-8E0666417E00}
 		{69CF529A-7ACE-4576-BEFF-4BF8BD39BCC2} = {D1ECD7F8-DFC8-4B2E-A737-8E0666417E00}
 		{2D5F048A-F61B-4D70-94E9-0E2D23FF5F50} = {D1ECD7F8-DFC8-4B2E-A737-8E0666417E00}
+		{67E6FEE1-C37E-44DF-9302-7EB47579D827} = {A0136684-7DEA-411C-A31B-6E3FE6A05B33}
+		{CA6C1BD4-06F5-4776-9CB4-13F292B568F6} = {A0136684-7DEA-411C-A31B-6E3FE6A05B33}
+		{06147D16-5841-47CD-B3F6-F3EB0407F6E3} = {A0136684-7DEA-411C-A31B-6E3FE6A05B33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BDFFAAB3-F444-4B28-A575-0CDB21B61A09}
