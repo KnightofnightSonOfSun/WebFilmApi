@@ -1,9 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFilmApi", "WebFilmApi\WebFilmApi.csproj", "{6065E5F7-6F18-47DA-B31A-0235FE9B1A91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebFilmApi", "WebFilmApi\WebFilmApi.csproj", "{6065E5F7-6F18-47DA-B31A-0235FE9B1A91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Koknight.Basic.Oauth", "Koknight.Basic.Oauth\Koknight.Basic.Oauth.csproj", "{D08BD314-5817-4D89-B335-4560CE30F322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koknight.Basic.Structure", "Koknight.Basic.Interface\Koknight.Basic.Structure.csproj", "{C4860276-3920-4854-8173-80607CA50902}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{61F041C7-4EC2-4153-8219-1E3C055BA9CF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,14 @@ Global
 		{6065E5F7-6F18-47DA-B31A-0235FE9B1A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6065E5F7-6F18-47DA-B31A-0235FE9B1A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6065E5F7-6F18-47DA-B31A-0235FE9B1A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08BD314-5817-4D89-B335-4560CE30F322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08BD314-5817-4D89-B335-4560CE30F322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08BD314-5817-4D89-B335-4560CE30F322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08BD314-5817-4D89-B335-4560CE30F322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4860276-3920-4854-8173-80607CA50902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4860276-3920-4854-8173-80607CA50902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4860276-3920-4854-8173-80607CA50902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4860276-3920-4854-8173-80607CA50902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Data\**" />
+    <Compile Remove="Models\Enum\**" />
+    <Content Remove="Models\Data\**" />
+    <Content Remove="Models\Enum\**" />
+    <EmbeddedResource Remove="Models\Data\**" />
+    <EmbeddedResource Remove="Models\Enum\**" />
+    <None Remove="Models\Data\**" />
+    <None Remove="Models\Enum\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
@@ -12,8 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Data\" />
-    <Folder Include="Models\Enum\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
