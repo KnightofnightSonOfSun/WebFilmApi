@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Managers\" />
-    <Folder Include="Models\Response\" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Koknight.Basic.Interface\Koknight.Basic.Structure.csproj" />
-  </ItemGroup>
-  
 
 </Project>

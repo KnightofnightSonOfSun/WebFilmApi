@@ -8,6 +8,7 @@
  * Create time：  2024/11/13 22:37
  * ======================================
 *************************************************************************************/
+using Koknight.Feature.Oauth.Models.Response;
 using Koknight.Basic.Structure.Models;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Koknight.Basic.Oauth.Interface
+namespace Koknight.Feature.Oauth.Interface
 {
     public interface IJWTService
     {
@@ -36,5 +37,19 @@ namespace Koknight.Basic.Oauth.Interface
         /// <returns></returns>
         BaseResponse<string> GetCodeBySessionCode(string clientId, string sessionCode);
 
+        /// <summary>
+        /// Refresh token by auth code.
+        /// </summary>
+        /// <param name="authCode"></param>
+        /// <returns></returns>
+        BaseResponse<GetTokenDto> GetTokenWithRefresh(string authCode);
+
+        /// <summary>
+        /// Refresh token
+        /// </summary>
+        /// <param name="refreshToken"></param>
+        /// <param name="clientId"></param>
+        /// <returns></returns>
+        string GetTokenByRefresh(string refreshToken, string clientId);
     }
 }
