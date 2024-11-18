@@ -37,5 +37,7 @@ namespace Koknight.Basic.Database.DbContexts
         }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<UserInfo> UserInfos { get; set; }  
     }
 }

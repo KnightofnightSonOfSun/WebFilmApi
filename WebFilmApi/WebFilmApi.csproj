@@ -24,11 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Koknight.Basic.Common\Koknight.Basic.Common.csproj" />
+    <ProjectReference Include="..\Koknight.Basic.Database\Koknight.Basic.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Koknight.Basic.Database\Koknight.Basic.Database.csproj" />
+    <EditorConfigFiles Remove="D:\Codes\WebFilmApi\WebFilmApi\Middlewares\.editorconfig" />
   </ItemGroup>
 
 </Project>

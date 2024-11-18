@@ -18,8 +18,8 @@ namespace Koknight.Feature.Oauth.Services
         /// <summary>
         /// 
         /// </summary>
-        public List<AppHSSetting> appHSSettings { get; set; }
-        public List<AppRSSetting> appRSSettings { get; set; } = RSAKey.InitKey();
+        public List<AppHSSetting> AppHSSettings { get; set; }
+        public List<AppRSSetting> AppRSSettings { get; set; } = RSAKey.InitKey();
     }
     /// <summary>
     /// Symmetric encryption
@@ -29,15 +29,15 @@ namespace Koknight.Feature.Oauth.Services
         /// <summary>
         /// App domain
         /// </summary>
-        public string domain { get; set; }
+        public string Domain { get; set; }
         /// <summary>
         /// Key
         /// </summary>
-        public string clientId { get; set; }
+        public string ClientId { get; set; }
         /// <summary>
         /// Secret
         /// </summary>
-        public string clientSecret { get; set; }
+        public string ClientSecret { get; set; }
     }
     /// <summary>
     /// Asymmetric encryption
@@ -47,19 +47,19 @@ namespace Koknight.Feature.Oauth.Services
         /// <summary>
         /// App domain
         /// </summary>
-        public string domain { get; set; }
+        public string Domain { get; set; }
         /// <summary>
         /// Cilent id.
         /// </summary>
-        public string clientId { get; set; }
+        public string ClientId { get; set; }
         /// <summary>
         /// Public key.
         /// </summary>
-        public string publicKey { get; set; }
+        public string PublicKey { get; set; }
         /// <summary>
         /// Private key.
         /// </summary>
-        public string privateKey { get; set; }
+        public string PrivateKey { get; set; }
     }
     public class RSAKey
     {
@@ -70,16 +70,16 @@ namespace Koknight.Feature.Oauth.Services
             {
                 new AppRSSetting()
                 {
-                    domain="localhost:7001",
-                    clientId="web1",
-                    publicKey=@"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvnZdjDT+SFgdZJiV8XcC
+                    Domain="localhost:7001",
+                    ClientId="web1",
+                    PublicKey=@"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvnZdjDT+SFgdZJiV8XcC
 dvWck3OenzcQme+mfpoJtDIoUgJYmpoTLRA+wH8t21MFTz6e69oC3SKq7dx/xvsa
 5xRBud0oNwRRSKnUF345R84qTC2mvrznXNuiIuOJV2soG/lVxwCDgVPh0yJnWWkd
 3wD8D3keIpyxC5eHE5RnwVnB0paxk5Mnu/E/SmIoxdt1xR3sAg8nspbfMa3Wswhk
 /jKZx2GPjYGunK7epysr2gkVekhX7S4o7dfuFK3x/+wG+mdsNFVsp8eQ+G66rHPP
 i50eeKTUCH1RneSCyxVV8EZflVYHWX7azCW4AOsqEQGqMWvwshi09BVo2O8hHrnL
 cwIDAQAB",
-                    privateKey=@"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+dl2MNP5IWB1k
+                    PrivateKey=@"MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+dl2MNP5IWB1k
 mJXxdwJ29ZyTc56fNxCZ76Z+mgm0MihSAliamhMtED7Afy3bUwVPPp7r2gLdIqrt
 3H/G+xrnFEG53Sg3BFFIqdQXfjlHzipMLaa+vOdc26Ii44lXaygb+VXHAIOBU+HT
 ImdZaR3fAPwPeR4inLELl4cTlGfBWcHSlrGTkye78T9KYijF23XFHewCDyeylt8x
@@ -109,16 +109,16 @@ yPUFayuJ1n+agcS5nInFQiU="
                 },
                 new AppRSSetting()
                 {
-                    domain="localhost:7001",
-                    clientId="web2",
-                    publicKey=@"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnW5RiFnRO7JWqbP61BG7
+                    Domain="localhost:7001",
+                    ClientId="web2",
+                    PublicKey=@"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnW5RiFnRO7JWqbP61BG7
 ojQ3wN8q0W95k2hKH3p6dXqdL49LvNbm2KjiCKJYQCb2TepZFj0gEdG0HhgNdhxY
 T6Hf4GQPxnz53vQdh8+GLxElFHsXk0GTrIKltWdeDb3VVNhBFlU4/afxsH7r6dUI
 apW2sL+N3VFtb9uztIeh1koiotIgEwePewMpeQd4QAT+C38lH7UNQWyR8e8HYENX
 suBZO5Nt45VGHuxC4BV0BeBYEO5mYMuAcrGQxdwKhZZzNZ5zFbXpE7UDyXd+zUbP
 CurUN++gTchqTkI4pksqxIW/8cU7CD9FsGEgN/gBugRyqXIpl/gaztIBntopLhsn
 WQIDAQAB",
-                    privateKey=@"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCdblGIWdE7slap
+                    PrivateKey=@"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCdblGIWdE7slap
 s/rUEbuiNDfA3yrRb3mTaEofenp1ep0vj0u81ubYqOIIolhAJvZN6lkWPSAR0bQe
 GA12HFhPod/gZA/GfPne9B2Hz4YvESUUexeTQZOsgqW1Z14NvdVU2EEWVTj9p/Gw
 fuvp1Qhqlbawv43dUW1v27O0h6HWSiKi0iATB497Ayl5B3hABP4LfyUftQ1BbJHx

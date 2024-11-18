@@ -8,18 +8,19 @@
  * Create time：  2024/11/14 21:40
  * ======================================
 *************************************************************************************/
+using Koknight.Basic.Structure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Koknight.Feature.Oauth.Models.Response
+namespace Koknight.Feature.Oauth.Models
 {
     /// <summary>
     /// Get token response
     /// </summary>
-    public class GetTokenDto
+    public class GetTokenResponse : BaseResponse
     {
         /// <summary>
         /// token

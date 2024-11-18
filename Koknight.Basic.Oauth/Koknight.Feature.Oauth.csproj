@@ -14,7 +14,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Koknight.Basic.Common\Koknight.Basic.Common.csproj" />
+    <ProjectReference Include="..\Koknight.Basic.Database\Koknight.Basic.Database.csproj" />
     <ProjectReference Include="..\Koknight.Basic.Interface\Koknight.Basic.Structure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
   
 

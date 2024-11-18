@@ -1,10 +1,15 @@
 using Autofac;
+using Koknight.Basic.Common.Loggers;
 using Koknight.Basic.Database.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using WebFilmApi.Extensions;
+using WebFilmApi.Middlewares;
 
 namespace WebFilmApi
 {
@@ -31,6 +36,8 @@ namespace WebFilmApi
                     Description = "¿ò¼ÜËµÃ÷ÎÄµµ"
                 });
             });
+
+            services.AddLocalFileLogger(options => options.SaveDays = 7);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +47,8 @@ namespace WebFilmApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<GlobalExceptionMiddleware>();
 
             app.UseRouting();
             app.UseSwagger();

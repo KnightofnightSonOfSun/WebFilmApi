@@ -1,10 +1,8 @@
-﻿using Koknight.Basic.Database.DbContexts;
+﻿using Koknight.Basic.Common.Exceptions;
+using Koknight.Basic.Database.DbContexts;
 using Koknight.Basic.Database.Oauth;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebFilmApi.Controllers
 {
@@ -21,15 +19,28 @@ namespace WebFilmApi.Controllers
         [HttpGet("/weather")]
         public string GetWeather()
         {
-            var data = mysqlDbContext.Users.ToList();
-            mysqlDbContext.Users.Add(new User
+            var data = mysqlDbContext.Users.FirstOrDefault(x => x.Id ==1);
+            var info = new UserInfo
             {
-                UserName = "testAdmin",
-                Password = "testAdmin"
-            });
+                UserId = 1,
+                Account = "test",
+                Name = "test",
+                Email = "test@koknight.com",
+                Mobile = "1888888888",
+                Role = "admin",
+            };
+
+            mysqlDbContext.UserInfos.Add(info);
 
             mysqlDbContext.SaveChanges();
             return "Test";
         }
+
+        [HttpGet("/testException")]
+        public string TestException()
+        {
+            throw new System.Exception();
+        }
+
     }
 }

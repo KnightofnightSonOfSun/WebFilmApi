@@ -8,13 +8,13 @@
  * Create time：  2024/11/13 22:37
  * ======================================
 *************************************************************************************/
-using Koknight.Feature.Oauth.Models.Response;
 using Koknight.Basic.Structure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Koknight.Feature.Oauth.Models;
 
 namespace Koknight.Feature.Oauth.Interface
 {
@@ -27,7 +27,7 @@ namespace Koknight.Feature.Oauth.Interface
         /// <param name="userNmae"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        BaseResponse<string> GetCode(string clientId, string userNmae, string password);
+        BaseResponse<string> GetCode(string clientId, string userName, string password);
 
         /// <summary>
         /// Get auth code by Session code
@@ -42,7 +42,7 @@ namespace Koknight.Feature.Oauth.Interface
         /// </summary>
         /// <param name="authCode"></param>
         /// <returns></returns>
-        BaseResponse<GetTokenDto> GetTokenWithRefresh(string authCode);
+        GetTokenResponse GetTokenWithRefresh(string authCode);
 
         /// <summary>
         /// Refresh token
@@ -50,6 +50,6 @@ namespace Koknight.Feature.Oauth.Interface
         /// <param name="refreshToken"></param>
         /// <param name="clientId"></param>
         /// <returns></returns>
-        string GetTokenByRefresh(string refreshToken, string clientId);
+        BaseResponse<string> GetTokenByRefresh(string refreshToken, string clientId);
     }
 }
